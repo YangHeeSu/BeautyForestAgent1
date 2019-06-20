@@ -33,9 +33,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTray = new System.Windows.Forms.Button();
-            this.nftIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ntfIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.ctmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ctmMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -68,15 +71,34 @@
             this.btnTray.UseVisualStyleBackColor = true;
             this.btnTray.Click += new System.EventHandler(this.BtnTray_Click);
             // 
-            // nftIcon
+            // ntfIcon
             // 
-            this.nftIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("nftIcon.Icon")));
-            this.nftIcon.Text = "트레이 아이";
+            this.ntfIcon.ContextMenuStrip = this.ctmMenu;
+            this.ntfIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("ntfIcon.Icon")));
+            this.ntfIcon.Text = "트레이 아이";
+            this.ntfIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NtfIcon_MouseDoubleClick);
             // 
             // ctmMenu
             // 
+            this.ctmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.폼보이기ToolStripMenuItem,
+            this.종료ToolStripMenuItem});
             this.ctmMenu.Name = "ctmMenu";
-            this.ctmMenu.Size = new System.Drawing.Size(61, 4);
+            this.ctmMenu.Size = new System.Drawing.Size(127, 48);
+            // 
+            // 폼보이기ToolStripMenuItem
+            // 
+            this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
+            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.폼보이기ToolStripMenuItem.Text = "폼 보이기";
+            this.폼보이기ToolStripMenuItem.Click += new System.EventHandler(this.폼보이기ToolStripMenuItem_Click);
+            // 
+            // 종료ToolStripMenuItem
+            // 
+            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.종료ToolStripMenuItem.Text = "종료";
+            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -94,6 +116,7 @@
             this.Name = "Form1";
             this.Text = "Beauty Forest Agent v0.1 by 3508 양희수";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ctmMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,8 +126,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTray;
-        private System.Windows.Forms.NotifyIcon nftIcon;
+        private System.Windows.Forms.NotifyIcon ntfIcon;
         private System.Windows.Forms.ContextMenuStrip ctmMenu;
+        private System.Windows.Forms.ToolStripMenuItem 폼보이기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
     }
 }
 
